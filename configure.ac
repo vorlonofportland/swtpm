@@ -116,8 +116,8 @@ AM_CONDITIONAL([WITH_SELINUX], [test "x$with_selinux" = "xyes"])
 if test "$prefix" = "/usr" && test "$sysconfdir" = '${prefix}/etc'; then
 	sysconfdir="/etc"
 fi
-if test "$prefix" = "" && test "$datarootdir" = '${prefix}/share'; then
-	datarootdir="/usr/share"
+if test "$prefix" = "" && test "$libexecdir" = '${prefix}/libexec'; then
+	libexecdir="/usr/libexec"
 fi
 if test "$prefix" = "/usr" && test "$localstatedir" = '${prefix}/var'; then
 	localstatedir="/var"
@@ -129,11 +129,11 @@ if test "x$exec_prefix" = "xNONE"; then
 	exec_prefix=$prefix
 fi
 SYSCONFDIR=`eval echo $sysconfdir`
-DATAROOTDIR=`eval echo $datarootdir`
+LIBEXECDIR=`eval echo $libexecdir`
 LOCALSTATEDIR=`eval echo $localstatedir`
 BINDIR=`eval echo $bindir`
 AC_SUBST([SYSCONFDIR])
-AC_SUBST([DATAROOTDIR])
+AC_SUBST([LIBEXECDIR])
 AC_SUBST([LOCALSTATEDIR])
 AC_SUBST([BINDIR])
 
